@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Filter</title>
+    <script defer src="./No3.js"></script>
+    <style>
+        table, 
+        th, 
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+
+        <fieldset>
+            <legend>Filter</legend>
+            <p>Nama: <input type="text" id="keyword" oninput="filterData()"></p>
+            <p>Harga: <input type="number" name="min" id="min" onkeyup="filterData()"> - <input type="number" name="max" id="max" onkeyup="filterData()"></p>
+            <p>Category: <select name="category" id="categoryFilter" onchange="filterData()"></select>
+        </fieldset>
+        <fieldset>
+            <legend>Input Data</legend>
+            <table>
+                <td><input type="text" name="nama" id="nameInput" placeholder="Nama"></td>
+                <td><input type="number" name="price" id="priceInput" placeholder="Harga"></td>
+                <td><select name="category" id="categoryInput"></select>
+                <td><input type="text" name="stock" id="stockInput" placeholder="Stock"></td>
+            </table>
+            <p><input type="button" value="input" onclick="tambahData()"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tabel Data</legend>
+            <table id="myTable">
+                <thead>
+                    <th>Id</th>
+                    <th>Category</th>
+                    <th>Nama</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Buy</th>
+                    <th>Action</th>
+                    
+                </thead>
+                <tbody id="render">
+
+                </tbody>
+
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>cart</legend>
+            <table id="mytable2">
+                <thead>
+                    <th>Id</th>
+                    <th>Category</th>
+                    <th>Nama</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Action</th>
+                    
+                </thead>
+                <tbody id="render2">
+
+                </tbody>
+                </table>
+                <p><input type="button" value="Payment" onclick="bayar()"></p>
+        </fieldset>
+        <fieldset>
+            <legend>Payment</legend>
+            <div id="transactionDetail"></div>
+        </fieldset>
+    </form>
+</body>
+</html>

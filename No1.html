@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+
+        <h1>Drawing Tools</h1>
+        <p>1. Persegi</p>
+        <p>2. Segitiga Siku2 Rata Kiri</p>
+        <p>3. Segitiga Siku2 Rata Kanan</p><br><br>
+        <p>Jenis Bangunan: <br><br> <input type="number" id="inputJenis" ></p>
+        <p>Ukuran: <br><br> <input type="number" id="inputUkuran" ></p>
+        <p><button type="button" onclick="jalaninApp()">Lihat</button></p><br><br>
+        <p id="Tampilan"></p>
+        
+    </center>
+</body>
+<script>
+  jalaninApp= ()=> {
+        var jenisBangungan = document.getElementById("InputJenis").value
+        var ukuran = document.getElementById("inputUkuran").value
+        var tampilan = document.getElementById("Tampilan").innerHTML
+        tampilan = ()=>{
+            if (jenisBangungan === 1){
+                for (let i = 1 ; i <= ukuran ; i++){
+                        let z=''
+                        for(let j = 0 ; j < ukuran ; j++){
+                            z += '*'
+                    }
+                } return z
+            }else if (jenisBangungan === 2){
+                for (let i = 1 ; i <= ukuran ; i++){
+                        let z=''
+                        for(let j = 0 ; j < i ; j++){
+                            z += '*'
+                    }
+                   
+                } return z
+            } else (jenisBangungan === 3);{
+                for (let i = 1 ; i <= ukuran ; i++){
+                        let z=''
+                        for ( let x = i ; x < ukuran ; x ++){
+                            z += ' '
+                        }
+                        for(let j = 0 ; j < i ; j++){
+                            z += '*'
+                        }
+                } return z
+            }
+        }
+        document.getElementById("Tampilan").innerHTML = tampilan
+   }
+   jalaninApp()
+
+</script>
+</html>
